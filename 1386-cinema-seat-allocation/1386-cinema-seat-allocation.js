@@ -15,11 +15,6 @@ var maxNumberOfFamilies = function(n, reservedSeats) {
 
     let totalFamilies = (n - reservedRows.size) * 2;
 
-    // Bit positions for col - 1:
-    // Left:   cols 2, 3, 4, 5 -> bits 1, 2, 3, 4 -> 0b00011110 = 30
-    // Right:  cols 6, 7, 8, 9 -> bits 5, 6, 7, 8 -> 0b000111100000... wait,
-    // Right:  cols 6,7,8,9   -> bits 5, 6, 7, 8 -> 0b111100000 = 480
-    // Middle: cols 4, 5, 6, 7 -> bits 3, 4, 5, 6 -> 0b01111000 = 120
     const LEFT_MASK = 30;
     const RIGHT_MASK = 480;
     const MID_MASK = 120;
